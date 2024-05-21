@@ -1,0 +1,15 @@
+{
+  "name": "@my-typespec-monorepo/petstore",
+  "version": "1.0.0",
+  "dependencies": {
+    "@typespec/compiler": "^0.56.0",
+    "@typespec/http": "^0.56.0",
+    "@typespec/openapi3": "^0.56.0",
+    "@typespec/rest": "^0.56.0",
+    "@my-typespec-monorepo/common": "^1.0.0"
+  },
+  "scripts": {
+    "build": "npx tsp compile petstore.tsp",
+    "build:watch": "npx tsp compile petstore.tsp --watch"
+  }
+}

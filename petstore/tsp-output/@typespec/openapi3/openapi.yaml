@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: Pet store
+  version: 0.0.0
+tags: []
+paths:
+  /:
+    get:
+      operationId: PetOperations_getPet
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/Pet'
+                  - $ref: '#/components/schemas/MyApiCommon.ErrorObject'
+components:
+  schemas:
+    MyApiCommon.ErrorObject:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+        id:
+          type: string
+        code:
+          type: string
+        title:
+          type: string
+    Pet:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+servers:
+  - url: https://api.example.com
+    description: Example endpoint
+    variables: {}
