@@ -9,7 +9,7 @@ Inputs
 
 Outputs
 
-- [openapi.yaml](petstore/tsp-output/@typespec/openapi3/openapi.yaml)
+- [Online on editor.swagger.io](https://editor.swagger.io/?url=https://raw.githubusercontent.com/rrevo/my-typespec-monorepo/main/petstore/tsp-output/%40typespec/openapi3/openapi.yaml)
 
 ## Developer commands
 
