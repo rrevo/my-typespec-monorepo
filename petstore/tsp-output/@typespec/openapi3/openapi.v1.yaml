@@ -8,16 +8,35 @@ paths:
     get:
       operationId: Pets_getPets
       description: Get all pets
-      parameters: []
+      parameters:
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/MyApiCommon.PageCursor'
+        - name: size
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/MyApiCommon.PageSize'
       responses:
         '200':
           description: The request has succeeded.
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Pet'
+                type: object
+                required:
+                  - data
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Pet'
+                  links:
+                    $ref: '#/components/schemas/MyApiCommon.PageLinks'
+                  meta:
+                    $ref: '#/components/schemas/MyApiCommon.PageMeta'
         default:
           description: An unexpected error response.
           content:
@@ -124,6 +143,29 @@ components:
         title:
           type: string
       description: Error object
+    MyApiCommon.PageCursor:
+      type: string
+      description: Cursor for pagination
+    MyApiCommon.PageLinks:
+      type: object
+      properties:
+        self:
+          type: string
+        first:
+          type: string
+        prev:
+          type: string
+        next:
+          type: string
+        last:
+          type: string
+    MyApiCommon.PageMeta:
+      type: object
+      additionalProperties: {}
+      description: Metadata for pagination
+    MyApiCommon.PageSize:
+      type: integer
+      description: Size for pagination
     Pet:
       oneOf:
         - $ref: '#/components/schemas/Dog'

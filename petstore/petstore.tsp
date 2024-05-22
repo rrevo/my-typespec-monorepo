@@ -55,7 +55,10 @@ model Cat is BasePet {
 interface Pets {
   @doc("Get all pets")
   @get
-  getPets(): Pet[] | ErrorObject;
+  getPets(@query cursor?: PageCursor, @query size?: PageSize): {
+    @statusCode statusCode: 200;
+    @body pets: Page<Pet>;
+  } | ErrorObject;
 
   @doc("Get a pet by ID")
   @get
