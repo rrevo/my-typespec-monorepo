@@ -4,6 +4,7 @@
   "dependencies": {
     "@typespec/compiler": "^0.56.0",
     "@typespec/http": "^0.56.0",
+    "@typespec/library-linter": "^0.56.0",
     "@typespec/openapi3": "^0.56.0",
     "@typespec/rest": "^0.56.0"
   },
@@ -12,7 +13,7 @@
     "common.tsp"
   ],
   "scripts": {
-    "build": "npx tsp compile common.tsp",
-    "build:watch": "npx tsp compile common.tsp --watch"
+    "build": "npx tsp compile common.tsp --warn-as-error --import @typespec/library-linter --no-emit",
+    "build:watch": "npx tsp compile common.tsp --watch --warn-as-error"
   }
 }

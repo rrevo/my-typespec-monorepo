@@ -7,6 +7,8 @@ using TypeSpec.Rest;
 
 namespace MyApiCommon;
 
+@error
+@doc("Error object")
 model ErrorObject {
     status: string;
     id?: string;

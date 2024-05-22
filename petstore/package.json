@@ -9,7 +9,7 @@
     "@my-typespec-monorepo/common": "^1.0.0"
   },
   "scripts": {
-    "build": "npx tsp compile petstore.tsp",
-    "build:watch": "npx tsp compile petstore.tsp --watch"
+    "build": "npx tsp compile petstore.tsp --warn-as-error",
+    "build:watch": "npx tsp compile petstore.tsp --watch --warn-as-error"
   }
 }

@@ -14,11 +14,15 @@ paths:
           content:
             application/json:
               schema:
-                anyOf:
-                  - type: array
-                    items:
-                      $ref: '#/components/schemas/Pet'
-                  - $ref: '#/components/schemas/MyApiCommon.ErrorObject'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyApiCommon.ErrorObject'
 components:
   schemas:
     MyApiCommon.ErrorObject:
@@ -34,6 +38,7 @@ components:
           type: string
         title:
           type: string
+      description: Error object
     Pet:
       type: object
       required:
