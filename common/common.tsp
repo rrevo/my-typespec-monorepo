@@ -10,8 +10,8 @@ namespace MyApiCommon;
 @error
 @doc("Error object")
 model ErrorObject {
-    status: string;
-    id?: string;
-    code?: string;
-    title?: string;
+  status: string;
+  id?: string;
+  code?: string;
+  title?: string;
 }
