@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Pet store
-  version: 0.0.0
+  version: v1
 tags: []
 paths:
   /pets:
@@ -133,6 +133,10 @@ components:
         mapping:
           dog: '#/components/schemas/Dog'
           cat: '#/components/schemas/Cat'
+    Versions:
+      type: string
+      enum:
+        - v1
 servers:
   - url: https://api.example.com
     description: Example endpoint

@@ -1,18 +1,25 @@
 import "@typespec/http";
 import "@typespec/rest";
 import "@typespec/openapi3";
+import "@typespec/versioning";
 import "@my-typespec-monorepo/common";
 
 using TypeSpec.Http;
 using TypeSpec.Rest;
 using TypeSpec.OpenAPI;
+using TypeSpec.Versioning;
 using MyApiCommon;
 
 @service({
   title: "Pet store",
 })
 @server("https://api.example.com", "Example endpoint")
+@versioned(Versions)
 namespace MyApi;
+
+enum Versions {
+  v1,
+}
 
 @discriminator("kind")
 @oneOf
