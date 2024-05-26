@@ -12,6 +12,7 @@ namespace MyApiCommon;
 
 enum Versions {
   v1,
+  v2,
 }
 
 model Page<Data> {
@@ -26,6 +27,15 @@ model PageLinks {
   prev?: string;
   next?: string;
   last?: string;
+}
+
+@added(Versions.v2)
+model ObjectLink {
+  self?: string;
+  related?: {
+    href?: string;
+    title?: string;
+  }
 }
 
 @doc("Metadata for pagination")

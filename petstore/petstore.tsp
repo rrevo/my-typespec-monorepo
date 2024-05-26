@@ -20,6 +20,9 @@ namespace MyApi;
 enum Versions {
   @useDependency(MyApiCommon.Versions.v1)
   v1,
+
+  @useDependency(MyApiCommon.Versions.v2)
+  v2,
 }
 
 @discriminator("kind")
@@ -38,6 +41,9 @@ model BasePet {
   id: string;
   category: Category;
   name?: string;
+
+  @added(Versions.v2)
+  links?: ObjectLink;
 }
 
 model Dog is BasePet {

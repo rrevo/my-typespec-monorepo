@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Pet store
-  version: v1
+  version: v2
 tags: []
 paths:
   /pets:
@@ -80,6 +80,8 @@ components:
           $ref: '#/components/schemas/Category'
         name:
           type: string
+        links:
+          $ref: '#/components/schemas/MyApiCommon.ObjectLink'
     Cat:
       type: object
       required:
@@ -93,6 +95,8 @@ components:
           $ref: '#/components/schemas/Category'
         name:
           type: string
+        links:
+          $ref: '#/components/schemas/MyApiCommon.ObjectLink'
         kind:
           type: string
           enum:
@@ -120,6 +124,8 @@ components:
           $ref: '#/components/schemas/Category'
         name:
           type: string
+        links:
+          $ref: '#/components/schemas/MyApiCommon.ObjectLink'
         kind:
           type: string
           enum:
@@ -143,6 +149,18 @@ components:
         title:
           type: string
       description: Error object
+    MyApiCommon.ObjectLink:
+      type: object
+      properties:
+        self:
+          type: string
+        related:
+          type: object
+          properties:
+            href:
+              type: string
+            title:
+              type: string
     MyApiCommon.PageCursor:
       type: string
       description: Cursor for pagination
