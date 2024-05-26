@@ -1,11 +1,18 @@
 import "@typespec/http";
 import "@typespec/rest";
 import "@typespec/openapi3";
+import "@typespec/versioning";
 
 using TypeSpec.Http;
 using TypeSpec.Rest;
+using TypeSpec.Versioning;
 
+@versioned(Versions)
 namespace MyApiCommon;
+
+enum Versions {
+  v1,
+}
 
 model Page<Data> {
   data: Data[];

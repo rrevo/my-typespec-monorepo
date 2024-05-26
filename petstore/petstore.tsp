@@ -18,6 +18,7 @@ using MyApiCommon;
 namespace MyApi;
 
 enum Versions {
+  @useDependency(MyApiCommon.Versions.v1)
   v1,
 }
 
