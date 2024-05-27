@@ -1,6 +1,11 @@
 # About
 
-Test project for experimenting with typespec
+[Typespec](https://typespec.io) is a modern API definition language that enables API first tooling. To get started with typespec, see [docs](https://typespec.io/docs)
+
+This project is a sample project for with advanced examples. It includes-
+- common project with base models and versioning
+- petstore project with openapi oneOf, custom status codes and more.
+
 
 Inputs
 
